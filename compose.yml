@@ -1,0 +1,12 @@
+services:
+  # trying to automate npm run watch - does not work - error missing rollup dependency
+  vite:
+    ports:
+      - "5173:5173"
+    build:
+      context: ./
+      dockerfile: vite.dockerfile
+    volumes:
+      - ./:/app
+      - /app/demo/node_modules
+    command: npm run dev
